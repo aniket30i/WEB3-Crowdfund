@@ -51,8 +51,13 @@ contract MyContract {
     }
 
 
-    function getDonators(){}
+    function getDonators(uint256 _id) view public returns (address[] memory, uint[] memory){
+        return (campaigns[_id].donators, campaigns[_id].donations);
+    }
 
 
-    function getCampaigns(){}
+    function getCampaigns() public view returns (Campaign[] memory){
+        Campaign[] memory campaigns = new Campaign[](numberOfCampaigns);
+
+    }
 }
